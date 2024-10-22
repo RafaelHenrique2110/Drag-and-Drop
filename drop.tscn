@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bm3i33d4bxvnp"]
+
+[ext_resource type="Texture2D" uid="uid://sqnn0w3qbd8" path="res://circulo.png" id="1_1nvjb"]
+[ext_resource type="Script" path="res://drop.gd" id="1_o0jnw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_tfkwv"]
+radius = 110.005
+
+[node name="Drop" type="RigidBody2D"]
+gravity_scale = 0.0
+script = ExtResource("1_o0jnw")
+
+[node name="Circulo" type="Sprite2D" parent="."]
+modulate = Color(0.735006, 0.320234, 0.235017, 1)
+position = Vector2(-1, -1)
+scale = Vector2(0.222716, 0.219271)
+texture = ExtResource("1_1nvjb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Drop"]]
+position = Vector2(22, -12)
+shape = SubResource("CircleShape2D_tfkwv")
+debug_color = Color(4.81308e-06, 0.575027, 0.6731, 1)

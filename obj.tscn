@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx5xhi5nlm1sx"]
+
+[ext_resource type="Script" path="res://obj.gd" id="1_k0wi6"]
+[ext_resource type="Texture2D" uid="uid://sqnn0w3qbd8" path="res://circulo.png" id="1_spsoq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_n6pis"]
+radius = 44.1022
+
+[node name="OBJ" type="Area2D"]
+script = ExtResource("1_k0wi6")
+
+[node name="Circulo" type="Sprite2D" parent="."]
+position = Vector2(-10, 3)
+scale = Vector2(0.0881164, 0.0901042)
+texture = ExtResource("1_spsoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -3)
+shape = SubResource("CircleShape2D_n6pis")
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
